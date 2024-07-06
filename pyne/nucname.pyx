@@ -184,7 +184,6 @@ def id(nuc):
 
     """
     if isinstance(nuc, basestring):
-        nuc = str(nuc)
         nuc = bytes(nuc, 'utf-8')
         newnuc = cpp_nucname.id(<char *> nuc)
     elif isinstance(nuc, int) or isinstance(nuc, long):
