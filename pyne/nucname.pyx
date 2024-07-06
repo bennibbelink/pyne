@@ -183,10 +183,7 @@ def id(nuc):
         Output nuclide id.
 
     """
-    if isinstance(nuc, unicode):
-        nuc = nuc.encode()
-        newnuc = cpp_nucname.id(<char *> nuc)
-    elif isinstance(nuc, str):
+    if isinstance(nuc, basestring):
         newnuc = cpp_nucname.id(<char *> nuc)
     elif isinstance(nuc, int) or isinstance(nuc, long):
         newnuc = cpp_nucname.id(<int> nuc)
