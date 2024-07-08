@@ -21,14 +21,10 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     
 ENV PATH /opt/conda/bin:$PATH
 
-# install python 3.10 because that's what apt uses
-RUN conda update conda
-RUN conda install "python=3.12"
 RUN mamba update -n base conda mamba && \
     mamba update -y python --no-pin && \
     mamba update -y --all && \
     mamba install -y \
-                expat \
                 gxx_linux-64 \
                 gcc_linux-64 \
                 cmake \
